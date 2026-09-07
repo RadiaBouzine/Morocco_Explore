@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Morocco Explore</title>
+    <title>Morocco Explore — Discover Tourist Destinations in Morocco</title>
+    <meta name="description" content="Explore 100+ tourist destinations across Morocco — from Chefchaouen and Marrakech to the Sahara desert. Browse, search, save favorites, and read reviews.">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gray-50 text-gray-800">
