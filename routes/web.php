@@ -54,5 +54,22 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 Route::get('/destinations/{destination}', [DestinationController::class, 'show'])->name('destinations.show');
+Route::get('/sitemap.xml', function () {
+    $destinations = \App\Models\Destination::where('status', 'published')->get();
+
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>';
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+    $xml .= '<url><loc>' . url('/') . '</loc><priority>1.0</priority></url>';
+    $xml .= '<url><loc>' . route('destinations.index') . '</loc><priority>0.9</priority></url>';
+
+    foreach ($destinations as $destination) {
+        $xml .= '<url><loc>' . route('destinations.show', $destination) . '</loc><priority>0.8</priority></url>';
+    }
+
+    $xml .= '</urlset>';
+
+    return response($xml, 200)->header('Content-Type', 'text/xml');
+});
 
 require __DIR__.'/auth.php';
