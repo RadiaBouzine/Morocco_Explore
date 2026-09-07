@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="google-site-verification" content="icXTbfDsR1mLL2MYFvGpxDIsR8KRq3yBQYvFVzwJO88" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Morocco Explore — Discover Tourist Destinations in Morocco</title>
     <meta name="description" content="Explore 100+ tourist destinations across Morocco — from Chefchaouen and Marrakech to the Sahara desert. Browse, search, save favorites, and read reviews.">
