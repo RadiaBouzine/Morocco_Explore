@@ -1,8 +1,8 @@
-# 🔧 Maintenance Guide — Morocco Explore
+#  Maintenance Guide — Morocco Explore
 
 Internal notes for maintaining, updating, and troubleshooting the deployed application.
 
-## 📍 Deployment Info
+##  Deployment Info
 
 - **Host:** Railway
 - **Live URL:** https://moroccoexplore-production.up.railway.app
@@ -10,7 +10,7 @@ Internal notes for maintaining, updating, and troubleshooting the deployed appli
 - **File Storage:** Railway Volume mounted at `/app/storage/app/public` (persists uploaded/fetched images across deployments)
 - **Repository:** https://github.com/RadiaBouzine/Morocco_Explore
 
-## 💾 Database Backup
+##  Database Backup
 
 Run periodically from Railway Console (Morocco_Explore service → Console tab):
 
@@ -20,7 +20,7 @@ php artisan tinker --execute="echo App\Models\Destination::count() . ' destinati
 
 For a full SQL dump, use Railway's MySQL service → Data tab → Export, or connect with a MySQL client using the credentials in the MySQL service's Variables tab.
 
-## 🖼️ Adding New Destinations
+##  Adding New Destinations
 
 **Manually (recommended for real content):**
 Go to `/admin/destinations` → "+ Add Destination" → fill form → upload image(s).
@@ -31,7 +31,7 @@ Go to `/admin/destinations` → "+ Add Destination" → fill form → upload ima
 3. In Railway Console: `php artisan db:seed --class=MoroccoDataSeeder --force`
 4. To auto-fetch a photo: `php artisan destinations:fetch-images`
 
-## 🔑 Key Environment Variables (Railway → Variables)
+##  Key Environment Variables (Railway → Variables)
 
 | Variable | Purpose |
 |---|---|
@@ -40,7 +40,7 @@ Go to `/admin/destinations` → "+ Add Destination" → fill form → upload ima
 | `DB_*` | Auto-linked to the MySQL service by Railway |
 | `PEXELS_API_KEY` | Used by `php artisan destinations:fetch-images` |
 
-## ⚠️ Known Issues & Fixes (things we hit during setup)
+##  Known Issues & Fixes (things we hit during setup)
 
 **CSS/JS loading as `http://` and getting blocked (mixed content):**
 Fixed in `bootstrap/app.php` by adding `$middleware->trustProxies(at: '*');` — Railway sits behind a proxy, so Laravel needs to trust the `X-Forwarded-Proto` header to know the original request was HTTPS.
@@ -54,7 +54,7 @@ Fixed in `app/Http/Requests/Auth/LoginRequest.php` — added an `is_active` chec
 **`config:clear` needed after changing `.env` variables in Railway:**
 Railway's "Pre-deploy Command" is set to `php artisan config:clear` so cached config never goes stale after a variable change.
 
-## 🔄 Updating Dependencies
+##  Updating Dependencies
 
 ```bash
 composer update
@@ -64,13 +64,13 @@ git add . && git commit -m "Update dependencies" && git push
 ```
 Test locally with `php artisan serve` before pushing — Railway will auto-deploy from `main`.
 
-## 🌐 SEO Checklist (already done, re-verify periodically)
+##  SEO Checklist (already done, re-verify periodically)
 
 - Google Search Console: verified via meta tag in `resources/views/welcome.blade.php`
 - Sitemap: auto-generated at `/sitemap.xml`, submitted in Search Console → Sitemaps
 - Check indexing progress: `site:moroccoexplore-production.up.railway.app` in Google
 
-## 🆘 Quick Troubleshooting
+##  Quick Troubleshooting
 
 | Symptom | Check |
 |---|---|
