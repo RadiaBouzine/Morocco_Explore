@@ -25,7 +25,7 @@ Morocco Explore allows visitors to browse, search and filter 100+ real Moroccan 
 - Moderate Reviews (approve / hide / delete)
 - Manage Users (activate / deactivate / delete)
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Backend:** Laravel 12 (PHP 8.2)
 - **Database:** MySQL
