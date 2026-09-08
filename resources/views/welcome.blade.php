@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7Z0Q7H4E8"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z7Z0Q7H4E8');
+</script>
     <meta name="google-site-verification" content="icXTbfDsR1mLL2MYFvGpxDIsR8KRq3yBQYvFVzwJO88" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Morocco Explore — Discover Tourist Destinations in Morocco</title>
