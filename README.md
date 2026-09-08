@@ -2,11 +2,11 @@
 
 A full-stack web-based tourism platform for discovering tourist destinations across Morocco — built as a personal project covering the complete software development lifecycle (SRS → System Design → Implementation → Testing → Deployment).
 
-## 📖 About
+##  About
 
 Morocco Explore allows visitors to browse, search and filter 100+ real Moroccan destinations, while registered users can save favorites, rate places, and leave reviews. Administrators manage all content through a dedicated admin panel.
 
-## ✨ Features
+##  Features
 
 **Public (Visitor)**
 - Browse and search destinations by name, city or region
@@ -34,13 +34,13 @@ Morocco Explore allows visitors to browse, search and filter 100+ real Moroccan 
 - **Maps:** OpenStreetMap (embedded)
 - **Images:** Pexels API (auto-fetched for seeded destinations)
 
-## 📂 Project Documentation
+##  Project Documentation
 
 Full requirements analysis and system design documents are available in [`/docs`](./docs):
 - Software Requirements Specification (SRS)
 - System Analysis & Design (Use Cases, Class Diagram, Sequence/Activity Diagrams, ERD)
 
-## 🚀 Getting Started
+##  Getting Started
 
 ```bash
 git clone https://github.com/RadiaBouzine/Morocco_Explore.git
